@@ -1,0 +1,143 @@
+.solutions-list {
+    font-size: clamp(20px, 2.5vw, 24px);
+    font-style: normal;
+    font-weight: 300;
+    line-height: 120%; /* 28.8px */
+
+    width: 100%;
+
+    li {
+        cursor: pointer;
+        width: 100%;
+        padding: .83334em 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.20);
+
+        display: flex;
+        align-items: center;
+        gap: 20px;
+
+        &::after {
+            content: '';
+            width: 24px;
+            aspect-ratio: 1;
+            display: block;
+            @include backgroundCenterContain("../img/solutions/Linear/Arrows/Arrow Right.svg");
+            position: relative;
+            opacity: 0;
+            translate: -100%;
+            transition: all 320ms ease;;
+        }
+
+        &._active,
+        &:hover {
+            color: $colorSecondary;
+
+            &::after {
+                translate: 0;
+                opacity: 1;
+            }
+        }
+    }
+}
+
+.solution {
+
+    border-radius: 10px;
+    background: $colorWhite;
+    padding: clamp(20px, 5vw, 50px);
+    color: $colorTextPrimary;
+
+    // .solution__header
+    &__header {
+        display: flex;
+        align-items: center;
+        gap: $s30;
+        padding-bottom: $s30;
+        margin-bottom: $s30;
+
+        border-bottom: 1px solid $colorBorderMuted;
+
+        @media screen and (max-width: 375px) {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+    }
+
+    // .solution__logo
+    &__logo {
+        width: clamp(50px, 10vw, 100px);
+        flex-shrink: 0;
+        img {
+            width: 100%;
+            aspect-ratio: 1;
+            display: block;
+        }
+    }
+
+    // .solution__title
+    &__title {
+        color: $colorHeadingPrimary;
+        font-family: "Maven Pro";
+        font-size: clamp(24px, 3vw, 32px);
+        font-style: normal;
+        font-weight: 500;
+        line-height: 120%; /* 38.4px */
+        letter-spacing: -0.64px;
+        margin-bottom: 4px;
+    }
+
+    // .solution__subtitle
+    &__subtitle {
+        color: $colorHeadingPrimary;
+    }
+
+    // .solution__body
+    &__body {
+        display: flex;
+        flex-direction: column;
+        gap: $s30;
+    }
+
+    // .solution__desc
+    &__desc {
+    }
+
+    // .solution__slider
+    &__slider {
+        display: flex;
+        align-items: center;
+        gap: clamp(10px, 2vw, 20px);
+
+        @media screen and (max-width: $breakpoint576) {
+            flex-wrap: wrap;
+            justify-content: center;
+            .swiper {
+                flex: 0 0 100%;
+                width: 100%;
+            }
+        }
+    }
+
+    // .solution__prev
+    &__prev {
+        @media screen and (max-width: $breakpoint576) {
+            order: 2;
+        }
+    }
+
+    // .solution__slide-img
+    &__slide-img {
+        border-radius: 10px;
+        height: clamp(200px, 35vw, 350px);
+        width: 100%;
+        object-fit: cover;
+        overflow: hidden;
+    }
+
+    // .solution__next
+    &__next {
+        @media screen and (max-width: $breakpoint576) {
+            order: 3;
+        }
+    }
+}

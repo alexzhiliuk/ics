@@ -1,0 +1,37 @@
+.section-label {
+    font-size: clamp(12px, 2vw, 16px);
+    font-style: normal;
+    font-weight: 400;
+    line-height: 130%; /* 20.8px */
+    letter-spacing: 0.2px;
+    text-transform: uppercase;
+    opacity: .7;
+
+    display: flex;
+    align-items: center;
+    gap: 5px;
+
+    &::before {
+        content: '[';
+    }
+    &::after {
+        content: ']';
+    }
+
+    &_sm {
+        font-size: clamp(12px, 2vw, 14px);
+        line-height: 110%; /* 15.4px */
+
+        opacity: 1;
+    }
+
+    &_secondary {
+        color: $colorSecondary;
+        opacity: 1;
+    }
+
+    &_accent {
+        color: $colorAccentPrimary;
+        opacity: 1;
+    }
+}

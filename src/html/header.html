@@ -1,0 +1,83 @@
+<header class="header">
+    <div class="header__container container">
+        <a href="index.html" class="header__logo">
+            <img src="@img/logo_default.svg" alt="">
+        </a>
+        <nav class="header__nav">
+            <ul class="header__menu">
+                <li class="header-dropdown">
+                    <a href="">Expertise</a>
+                    <ul class="header-dropdown__list">
+                        <li>
+                            <a href="">D365 Finance & SCM</a>
+                        </li>
+                        <li>
+                            <a href="">D365 Customer Engagement</a>
+                        </li>
+                        <li>
+                            <a href="">MS Power Platform</a>
+                        </li>
+                        <li>
+                            <a href="">MS Azure</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="">Services</a>
+                </li>
+                <li>
+                    <a href="">Clients</a>
+                </li>
+                <li class="header-dropdown">
+                    <a href="">Solutions</a>
+                    <ul class="header-dropdown__list">
+                        <li>
+                            <a href="">D365 Finance & SCM</a>
+                        </li>
+                        <li>
+                            <a href="">D365 Customer Engagement</a>
+                        </li>
+                        <li>
+                            <a href="">MS Power Platform</a>
+                        </li>
+                        <li>
+                            <a href="">MS Azure</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="">Blog</a>
+                </li>
+                <li>
+                    <a href="">About</a>
+                </li>
+            </ul>
+        </nav>
+        <a href="" class="header__btn btn btn_mobile">Contact</a>
+        <div class="header__burger">
+            <img src="@img/burger/Hamburger Menu.svg" alt="" class="_open">
+            <img src="@img/burger/Close.svg" alt="" class="_close">
+        </div>
+    </div>
+</header>
+
+<div class="mobile-menu">
+    <nav class="mobile-menu__nav"></nav>
+</div>
+
+<script>
+    $(".header__burger").click(function() {
+        $(this).toggleClass("_active")
+        $("body, html").toggleClass("mobile-lock")
+        $(".mobile-menu").toggleClass("_active")
+    })
+
+    const menu = $(".header__menu").clone().removeClass("header__menu").addClass("mobile-menu__list");
+    const btn = $(".header__btn").clone().removeClass("header__btn").addClass("mobile-menu__btn")
+
+    menu.find(".header-dropdown a").attr("href", "javascript:void(0)")
+
+    $(".mobile-menu__nav").append(menu)
+    $(".mobile-menu").append(btn)
+
+</script>

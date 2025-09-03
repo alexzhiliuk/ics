@@ -1,0 +1,70 @@
+.btn {
+    border-radius: 5px;
+    padding: 12px clamp(24px, 5vw, 48px);
+    height: clamp(44px, 6vw, 56px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+
+    text-align: center;
+    color: $colorWhite;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 21px;
+    
+    background: $colorAccentPrimary;
+
+    &_mobile {
+        padding: 12px 24px;
+        height: 44px;
+    }
+
+    &:hover {
+        background: $colorHeadingPrimary;
+        box-shadow: 0 0 0 5px rgba(59, 59, 59, 0.10);
+    }
+
+    &_icon {
+        padding: 10px;
+        aspect-ratio: 1;
+
+        img, svg {
+            width: 24px;
+            aspect-ratio: 1;
+            flex-shrink: 0;
+        }
+    }
+
+    &_secondary {
+        border: 1px solid $colorBorderMuted;
+        background: $colorWhite;
+
+        &:hover {
+            background: $colorWhite;
+            border: 1px solid $colorBgTertiary;
+            box-shadow: 0 0 0 5px rgba(212, 234, 248, 0.30);
+        }
+    }
+
+    &_tertiary {
+        background: $colorSecondary;
+        
+        &:hover {
+            background: $colorWhite;
+            color: $colorHeadingPrimary;
+            box-shadow: 0 0 0 5px rgba(42, 151, 222, 0.30);
+        }
+    }
+
+    &._disabled,
+    &._disabled:hover {
+        background: $colorBorderMuted;
+        color: $colorTextPrimary;
+        box-shadow: none;
+        border-color: transparent;
+    }
+
+    
+}

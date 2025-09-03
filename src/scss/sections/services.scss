@@ -1,0 +1,38 @@
+.services {
+    @include flexColumns(2, $s30);
+
+    @media screen and (max-width: $breakpoint576) {
+        @include flexColumns(1, 15px);
+    }
+}
+
+.card-service {
+    
+    flex-grow: 1;
+
+    border-radius: 10px;
+    background: #FFF;
+    padding: clamp(20px, 3vw, 30px);
+
+    display: flex;
+    flex-direction: column;
+
+    // .card-service__icon
+    &__icon {
+        width: clamp(30px, 4vw, 50px);
+        aspect-ratio: 1;
+        display: block;
+        margin-bottom: clamp(30px, 4vw, 50px);
+    }
+
+    // .card-service__title
+    &__title {
+        color: $colorHeadingPrimary;
+        margin-bottom: 10px;
+    }
+
+    // .card-service__text
+    &__text {
+        color: $colorTextPrimary;
+    }
+}

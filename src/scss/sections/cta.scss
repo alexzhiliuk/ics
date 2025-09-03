@@ -1,0 +1,37 @@
+.cta {
+
+    padding: 0 5px;
+    color: $colorPrimary;
+    position: relative;
+    z-index: 1;
+    margin-bottom: calc(-1 * $sectionPadding);
+
+    // .cta__container
+    &__container {
+        background: $colorBgBase;
+        padding: clamp(15px, 5vw, 50px);
+        border-radius: 10px;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: clamp(20px, 8vw, 80px);
+
+        @media screen and (max-width: $breakpoint576) {
+            flex-direction: column;
+            gap: 20px;
+            align-items: unset;
+        }
+    }
+
+    // .cta__title
+    &__title {
+        margin-bottom: 10px;
+    }
+
+    // .cta__text
+
+    &__text {
+    }
+}
+

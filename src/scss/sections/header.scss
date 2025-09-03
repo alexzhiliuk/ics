@@ -1,0 +1,322 @@
+$headerHeight: clamp(70px, 12.5vw, 125px);
+
+.header {
+
+    height: $headerHeight;
+    display: flex;
+    align-items: center;
+    position: fixed;
+    z-index: $headerLayer;
+    top: 0;
+    width: 100%;
+
+    &_scrolled {
+        background: $colorWhite;
+    }
+
+    // .header__container
+    &__container {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: clamp(20px, 3vw, 50px);
+    }
+
+    // .header__logo
+    &__logo {
+        width: clamp(72px, 10vw, 101px);
+        img {
+            width: 100%;
+            display: block;
+        }
+    }
+
+    // .header__nav
+    &__nav {
+        margin-left: auto;
+        @media screen and (max-width: $burgerBreakpoint) {
+            display: none;
+        }
+    }
+
+    // .header__menu
+    &__menu {
+        color: $colorTextBlue;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 140%;
+        
+        display: flex;
+        align-items: center;
+        gap: clamp(10px, 1vw, 20px);
+
+        & > li {
+            padding: 10px;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+
+            &::before {
+                content: '[';
+                color: $colorSecondary;
+                opacity: 0;
+                pointer-events: none;
+            }
+            &::after {
+                content: ']';
+                color: $colorSecondary;
+                opacity: 0;
+                pointer-events: none;
+            }
+
+            &:hover {
+                &::after,
+                &::before {
+                    opacity: 1;
+                }
+                
+                & > a {
+                    color: $colorSecondary;
+                }
+            }
+
+            & > a {
+                display: flex;
+                align-items: center;
+                gap: 5px;
+            }    
+        }
+    }
+
+    &__btn {
+        @media screen and (max-width: $burgerBreakpoint) {
+            display: none;
+        }
+    }
+
+    // .header__burger
+    &__burger {
+        @media screen and (min-width: $burgerBreakpoint) {
+            display: none;    
+        }
+
+        width: 40px;
+        aspect-ratio: 1;
+        flex-shrink: 0;
+
+        border-radius: 5px;
+        border: 1px solid $colorBorderMuted;
+        background: #FFF;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        img {
+            &._close {
+                display: none;
+            }
+        }
+
+        &._active {
+            img {
+                &._close {
+                    display: block;
+                }
+                &._open {
+                    display: none;
+                }
+            }
+        }
+
+    }
+}
+
+.header-dropdown {
+
+    position: relative;
+
+    & > a {
+
+        &::after {
+            content: '';
+            @include backgroundCenterContain("../img/dropdown/caret.svg");
+            display: block;
+            width: 16px;
+            height: 20px;
+            transition: $normalTransition;
+            color: $colorTextPrimary;
+        }
+
+    }
+
+    &:hover {
+
+        & > a {
+            &::after {
+                @include backgroundCenterContain("../img/dropdown/caret_alt.svg");
+                rotate: 180deg;
+            }
+        }
+
+        .header-dropdown__list {
+            pointer-events: all;
+            opacity: 1;
+        }
+    }
+
+    // .header-dropdown__list
+    &__list {
+        width: max-content;
+        opacity: 0;
+        pointer-events: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+
+        padding: 10px 0;
+        border-radius: 10px;
+        border: 1px solid rgba(203, 216, 229, 0.40);
+        background: rgba(255, 255, 255, 0.90);
+        backdrop-filter: blur(12.5px);
+
+        & > li {
+            & > a {
+                display: block;
+                padding: 10px 20px;
+
+                &:hover {
+                    color: $colorSecondary;
+                }
+            }
+        }
+    }
+}
+
+.mobile-menu {
+
+    display: none;
+    flex-direction: column;
+
+    &._active {
+        display: flex;
+    }
+
+    @media screen and (min-width: $burgerBreakpoint) {
+        display: none;
+        &._active {
+            display: none;
+        }
+    }
+
+    position: fixed;
+    z-index: $headerLayer;
+    top: $headerHeight;
+    bottom: 5px;
+    left: 5px; right: 5px;
+
+    overflow-y: auto;
+    // @include hideScrollbar;
+    &::-webkit-scrollbar {
+        width: 27px;
+    }
+    &::-webkit-scrollbar-track {
+        background: transparent;
+    }
+    &::-webkit-scrollbar-thumb {
+        border-radius: 14px;
+        box-shadow: inset 0 0 8px 8px $colorBorderBlue;
+        border: solid 12px transparent;
+    }
+
+
+    padding: 20px 15px;
+    // padding-right: 0;
+    background-color: $colorBgAlt;
+    border-radius: 15px;
+
+    // .mobile-menu__nav
+    &__nav {
+        margin-bottom: 20px;
+    }
+
+    &__list {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        & > li {
+            color: $colorTextBlue;
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 140%; /* 25.2px */
+
+            & > a {
+                padding: 5px 0;
+                padding-right: 7px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+        }
+
+        .header-dropdown {
+            &:hover {
+
+                // & > a {
+                //     &::after {
+                //         @include backgroundCenterContain("../img/dropdown/caret_alt.svg");
+                //         rotate: 180deg;
+                //     }
+                // }
+
+                .header-dropdown__list {
+                    display: flex;
+                }
+            }
+            &__list {
+                margin-top: 5px;
+                width: 100%;
+                opacity: 1;
+                pointer-events: all;
+                display: none;
+                flex-direction: column;
+                position: static;
+                top: unset;
+                left: unset;
+
+                padding: 0;
+                padding-left: 15px;
+                border-radius: 0;
+                border: none;
+                border-left: 2px solid $colorSecondary;
+                background: none;
+
+                color: $colorTextBlue;
+                font-size: 14px;
+                font-style: normal;
+                font-weight: 300;
+                line-height: 140%; /* 19.6px */
+
+                & > li {
+                    & > a {
+                        display: block;
+                        padding: 5px 0;
+
+                        &:hover {
+                            color: $colorSecondary;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &__btn {
+        margin-top: auto;
+    }
+    
+}

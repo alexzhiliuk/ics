@@ -1,0 +1,22 @@
+// @import "fonts";
+@import "mixins";
+@import "vars";
+@import "reset";
+@import "global";
+@import "typo";
+
+@import "UI/btn";
+@import "UI/label";
+
+@import "sections/header";
+@import "sections/hero";
+@import "sections/section";
+@import "sections/expertise";
+@import "sections/services";
+@import "sections/reviews";
+@import "sections/solutions";
+@import "sections/blog";
+@import "sections/footer";
+@import "sections/cta";
+
+@import "../libs/swiper/swiper";

@@ -1,0 +1,55 @@
+// Container
+$conteinerWidth: 1420 + px;
+$containerPadding: 20 + px;
+
+// Breakpoints
+$breakpoint1440: 1439.98 + px;
+$breakpoint1400: 1399.98 + px;
+$breakpoint1200: 1199.98 + px;
+$breakpoint1024: 1023.98 + px;
+$breakpoint992: 991.98 + px;
+$breakpoint768: 767.98 + px;
+$breakpoint576: 575.98 + px;
+$breakpoint480: 479.98 + px;
+
+// Colors
+$colorWhite: #FFFFFF;
+$colorBlack: #000000;
+$colorPrimary: #293579;
+$colorSecondary: #3B91CF;
+$colorHeadingPrimary: #3B3B3B;
+$colorTextPrimary: #777777;
+$colorTextBlue: #5D6D7E;
+$colorAccentPrimary: #F89931;
+$colorBorderMuted: #E5E5E5;
+$colorBorderBlue: #CBD8E5;
+$colorBgAlt: #F3F4F6;
+$colorBgBase: #EFF9FF;
+$colorBgTertiary: #D4EAF8;
+
+// Fonts
+$fontPrimary: "Rubik";
+$fontHeading: "Maven Pro";
+
+// Margin/Padding
+$s80: clamp(40px, 8vw, 80px);
+$s50: clamp(30px, 5vw, 50px);
+$s40: clamp(40px, 4vw, 40px);
+$s30: clamp(15px, 3vw, 30px);
+$s25: clamp(25px, 2vw, 25px);
+$s20: clamp(15px, 2vw, 20px);
+
+// Shadow
+$hoverShadow: 0 0 0 5px rgba(212, 234, 248, 0.30);
+$hoverShadowOnPrimary: 0 0 0 5px rgba(42, 151, 222, 0.30);;
+
+// Layers
+$headerLayer: 9;
+$popupLayer: 10;
+
+// Burger
+$burgerBreakpoint: $breakpoint1024;
+
+// Transitions
+$quickTransition: all 60ms ease;
+$normalTransition: all 120ms ease;

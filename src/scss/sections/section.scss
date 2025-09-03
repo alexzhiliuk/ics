@@ -1,0 +1,162 @@
+$sectionPadding: clamp(40px, 8vw, 80px);
+.section {
+
+    padding-bottom: $sectionPadding;
+
+    &_primary {
+        background: $colorPrimary;
+        color: $colorWhite;
+        padding-top: $sectionPadding;
+        padding-bottom: $sectionPadding;
+
+        .section__title {
+            color: $colorWhite;
+        }
+
+        & + .section {
+            padding-top: $sectionPadding;
+        }
+    }
+
+    &._figure-1 {
+        position: relative;
+        overflow: clip;
+
+        & > * {
+            position: relative;
+            z-index: 1;
+        }
+        
+        &::before {
+            content: '';
+            height: 844px;
+            width: 638px;
+            background: url(../img/services/Vector.svg) center / contain no-repeat;
+            position: absolute;
+            left: -100px;
+            bottom: -280px;
+            z-index: 0;
+
+            @media screen and (max-width: $breakpoint992) {
+                display: none;
+            }
+        }
+    }
+
+    // .section__container
+    &__container {
+        display: flex;
+        flex-direction: column;
+        gap: clamp(20px, 4vw, 40px);
+
+        &_row {
+            
+            flex-direction: row;
+            gap: clamp(30px, 8vw, 80px);
+
+            @media screen and (max-width: $breakpoint992) {
+                flex-direction: column;
+                gap: clamp(20px, 4vw, 40px);
+            }
+            
+
+            .section__body {
+                flex: 0 1 860px;
+                &_wide {
+                    flex: 0 1 960px;
+                }
+                .swiper {
+                    width: 100% !important;
+                    max-width: 100% !important;
+                    max-height: 100vh !important;
+                    min-height: 0 !important;
+                    min-width: 0 !important;
+                }
+                .swiper-wrapper {
+                    max-height: 100% !important;
+                    height: 100% !important;
+                    display: flex !important;
+                }
+                .swiper-slide {
+                    width: 100% !important;
+                    flex-shrink: 0 !important;
+                    display: block !important;
+                    height: 100% !important;
+                    max-height: 100% !important;
+                }
+
+                @media screen and (max-width: $breakpoint992) {
+                    flex: unset;
+                }
+            }
+        }
+    }
+
+    &__row {
+        & + .section__row {
+            $rowPadding: clamp(30px, 6vw, 60px);
+            padding-top: $rowPadding;
+            margin-top: $rowPadding;
+            
+            position: relative;
+            &::before {
+                content: '';
+                position: absolute;
+                display: block;
+                height: 1px;
+                top: 0;
+                left: 50%;
+                translate: -50% 0;
+                width: min($conteinerWidth, calc(100vw - 2 * $containerPadding));
+                background: $colorBorderMuted;
+            }
+        }
+    }
+
+    // .section__header
+    &__header {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: clamp(5px, 2vw, 20px);
+    }
+
+    &__aside {
+        display: flex;
+        flex-direction: column;
+        gap: clamp(10px, 3vw, 30px);
+        align-items: flex-start;
+        flex: 0 1 480px;
+
+        &_shrink {
+            flex: 0 1 360px;
+        }
+
+        &_sticky {
+            height: fit-content;
+            position: sticky;
+            top: calc($headerHeight + 20px);
+
+            @media screen and (max-width: $breakpoint992) {
+                position: static;
+            }
+        }
+
+        @media screen and (max-width: $breakpoint992) {
+            flex: unset;
+        }
+    }
+
+    // .section__title
+    &__title {
+        color: $colorHeadingPrimary;
+    }
+
+    // .section__body
+    &__body {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+    }
+
+}

@@ -1,0 +1,100 @@
+/* -------- GLOBAL -------- */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: $fontPrimary;
+}
+
+*,
+*::after,
+*::before {
+    transition: $quickTransition;
+}
+
+.container {
+    max-width: calc($conteinerWidth + 2 * $containerPadding);
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 $containerPadding;
+
+}
+
+
+html,
+body {
+    max-width: 100vw;
+    min-height: 100vh;
+    overflow-x: clip;
+    scroll-behavior: smooth;
+    color: $colorTextPrimary;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+}
+
+main {
+    
+}
+
+ul, ol {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button {
+    cursor: pointer;
+    background: none;
+}
+
+.lock {
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+
+.mobile-lock {
+    @media screen and (max-width: $burgerBreakpoint) {
+        overflow-y: hidden;
+        overflow-x: hidden;
+    }
+}
+
+
+.display-from-992 {
+    @media screen and (max-width: $breakpoint992) {
+        display: none !important;
+    }
+}
+.display-to-992 {
+    @media screen and (min-width: $breakpoint992) {
+        display: none !important;
+    }
+}
+
+.align-self-center {
+    align-self: center;
+}
+
+.fwidth-to-576 {
+    @media screen and (max-width: $breakpoint576) {
+        width: 100%;
+        max-width: 100%;
+    }
+}
+
+.mt-auto {
+    margin-top: auto;
+}
+
+.text-no-wrap {
+    text-wrap: nowrap;
+    white-space: nowrap;
+}
