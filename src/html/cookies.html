@@ -1,0 +1,19 @@
+<div class="cookies">
+    <div class="cookies__icon">
+        <img src="@img/Linear/Security/Shield Network.svg" alt="">
+    </div>
+    <div class="cookies__info">
+        <h4 class="cookies__title h4">We value your privacy.</h4>
+        <p class="cookies__text text-2">
+            We use cookies to ensure that you get the best experience on the website. By further browsing you agree with our <a href="">Privacy Policy</a>.
+        </p>
+    </div>
+    <button class="cookies__btn btn btn_mobile">Accept All</button>
+</div>
+<script>
+    $(document).ready(function () { 
+        $(".cookies__btn").click(function () { 
+            $(this).parents(".cookies").fadeOut();
+        })
+    })
+</script>

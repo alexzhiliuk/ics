@@ -1,0 +1,63 @@
+.cookies {
+    position: fixed;
+    z-index: calc($headerLayer - 1);
+
+    bottom: 20px;
+    left: 50%;
+    translate: -50% 0;
+
+    border-radius: 10px;
+    background: $colorPrimary;
+    padding: clamp(10px, 3vw, 35px);
+
+    display: flex;
+    align-items: flex-start;
+    gap: $s30;
+
+    width: min(800px, 90vw);
+
+    @media screen and (max-width: $breakpoint576) {
+        flex-wrap: wrap;
+    }
+
+    &__icon {
+        width: clamp(36px, 5vw, 50px);
+        aspect-ratio: 1;
+        flex-shrink: 0;
+
+        img, svg {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+    }
+
+    &__info {
+        max-width: 500px;
+        width: 100%;
+    }
+
+    &__title {
+        color: $colorWhite;
+        margin-bottom: 10px;
+    }
+
+    &__text {
+        color: rgba(255, 255, 255, 0.70);
+
+        a {
+            color: $colorWhite;
+            text-decoration: underline;
+        }
+    }
+
+
+    &__btn {
+        align-self: flex-end;
+        flex-shrink: 0;
+
+        @media screen and (max-width: $breakpoint576) {
+            flex: 0 0 100%;
+        }
+    }
+}

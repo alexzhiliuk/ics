@@ -1,0 +1,91 @@
+$colorBorder: gray;
+$colorGray: gray;
+$colorRed: red;
+
+.popup {
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow-x: hidden;
+    overflow-y: auto;
+    padding: clamp(10px, 4vw, 40px);
+
+    position: fixed;
+    top: 0; bottom: 0;
+    left: 0; right: 0;
+    z-index: $popupLayer;
+
+    background:rgba(0, 0, 0, 0.7);
+
+    // .popup__inner
+    &__inner {
+        background: $colorWhite;
+        border-radius: 20px;
+        margin-top: auto;
+        margin-bottom: auto;
+        max-width: 600px;
+        width: 100%;
+
+        padding: clamp(10px, 5vw, 50px);
+        display: flex;
+        flex-direction: column;
+        gap: $s30;
+
+        position: relative;
+    }
+
+    // .popup__close
+    &__close {
+        cursor: pointer;
+        position: absolute;
+        top: $s30;
+        right: $s30;
+        width: 24px;
+        height: auto;
+    }
+
+    // .popup__title
+    &__title {
+        color: $colorHeadingPrimary;
+        width: 100%;
+    }
+
+    // .popup__inputs
+    &__inputs {
+        width: 100%;
+
+        display: flex;
+        flex-direction: column;
+        gap: clamp(10px, 2vw, 20px);
+
+        @include inputs;
+    }
+
+    // .popup__input
+    &__input {
+        border: 1px solid $colorBorderMuted;
+
+        &::placeholder {
+            color: $colorGray;
+        }
+
+        &:not(:placeholder-shown) {
+            border-color: $colorBlack;
+        }
+    }
+
+    &__textarea {
+        border: 1px solid $colorBorderMuted;
+    }
+
+    
+    // .popup__btn
+    &__btn {
+        @media screen and (min-width: $breakpoint768) {
+            align-self: flex-start;
+        }
+    }
+}
+
