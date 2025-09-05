@@ -1,0 +1,69 @@
+<section class="section">
+    <div class="section__container container">
+        <div class="section__header">
+            <h2 class="section__title h2">Select Clients and Partners</h2>
+        </div>
+        <div class="section__body">
+            <div class="accordeons-horizontal">
+                <div class="accordeon-horizontal _active">
+                    <div class="accordeon-horizontal__header">
+                        <div class="accordeon-horizontal__icon">
+                            <img src="@img/Linear/Arrows/Sort Horizontal.svg" alt="">
+                        </div>
+                        <h4 class="accordeon-horizontal__title h4">Transportation Package</h4>
+                    </div>
+                    <div class="accordeon-horizontal__body" style="background: url(@img/accordeon/img.png) center / cover no-repeat;" >
+                        <div class="accordeon-horizontal__inner">
+                            <div class="accordeon-horizontal__icon">
+                                <img src="@img/Linear/Building, Infrastructure/Garage.svg" alt="">
+                            </div>
+                            <h5 class="accordeon-horizontal__title h3">Warehouse Package</h5>
+                            <p class="accordeon-horizontal__text text-1">At Exigy, we strive to deliver solutions of the highest standard. This is why we’ve teamed up with a number of industry leaders to ensure that we are working with the right tools at our disposal.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordeon-horizontal">
+                    <div class="accordeon-horizontal__header">
+                        <div class="accordeon-horizontal__icon">
+                            <img src="@img/Linear/School/Calculator.svg" alt="">
+                        </div>
+                        <h4 class="accordeon-horizontal__title h4">SC Execution Package</h4>
+                    </div>
+                    <div class="accordeon-horizontal__body" style="background: url(@img/accordeon/img.png) center / cover no-repeat;" >
+                        <div class="accordeon-horizontal__inner">
+                            <div class="accordeon-horizontal__icon">
+                                <img src="@img/Linear/Building, Infrastructure/Garage.svg" alt="">
+                            </div>
+                            <h5 class="accordeon-horizontal__title h3">Warehouse Package</h5>
+                            <p class="accordeon-horizontal__text text-1">At Exigy, we strive to deliver solutions of the highest standard. This is why we’ve teamed up with a number of industry leaders to ensure that we are working with the right tools at our disposal.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordeon-horizontal">
+                    <div class="accordeon-horizontal__header">
+                        <div class="accordeon-horizontal__icon">
+                            <img src="@img/Linear/School/Case.svg" alt="">
+                        </div>
+                        <h4 class="accordeon-horizontal__title h4">Demand Forecasting Package</h4>
+                    </div>
+                    <div class="accordeon-horizontal__body" style="background: url(@img/accordeon/img.png) center / cover no-repeat;" >
+                        <div class="accordeon-horizontal__inner">
+                            <div class="accordeon-horizontal__icon">
+                                <img src="@img/Linear/Building, Infrastructure/Garage.svg" alt="">
+                            </div>
+                            <h5 class="accordeon-horizontal__title h3">Warehouse Package</h5>
+                            <p class="accordeon-horizontal__text text-1">At Exigy, we strive to deliver solutions of the highest standard. This is why we’ve teamed up with a number of industry leaders to ensure that we are working with the right tools at our disposal.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+    $(".accordeon-horizontal").click(function () { 
+        $(this).parent().find(".accordeon-horizontal").removeClass("_active")
+        $(this).addClass("_active")
+    })
+</script>

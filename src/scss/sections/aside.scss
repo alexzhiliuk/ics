@@ -1,0 +1,53 @@
+.aside-partner {
+    border-radius: 10px;
+    border: 1px solid $colorBorderMuted;
+    padding: clamp(20px, 5vw, 50px);
+    max-height: 240px;
+    height: 100%;
+    width: 100%;
+
+    img {
+        max-height: 100%;
+        max-height: 160px;
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        display: block;
+    }
+}
+
+.aside-nav {
+
+    width: 100%;
+    
+    // .aside-nav__title
+    &__title {
+        color: $colorHeadingPrimary;
+        margin-bottom: 10px;
+    }
+
+    // .aside-nav__body
+    &__body {
+        & > * {
+            border-bottom: 1px solid $colorBorderMuted;
+
+            &:last-child {
+                border-bottom: none;
+            }
+        }
+    }
+
+    &__link {
+        display: block;
+        color: $colorHeadingPrimary;
+        padding: clamp(10px, 2vw, 20px);
+        padding-left: 0;
+        
+
+        &._active,
+        &:hover {
+            color: $colorSecondary;
+        }
+    }
+}
+

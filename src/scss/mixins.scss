@@ -59,13 +59,20 @@
     scrollbar-width: none;
 }
 
-
 @mixin clamp($width) {
     @if $dynamic == null {
         $dynamic: math.div($max, 10);
     }
     #{$property}: clamp(#{$min}px, #{$dynamic}vw, #{$max}px);
     @media screen and (max-width: $breakpoint992) {
+        flex: unset;
+    }
+}
+
+@mixin flexUntil($grow, $shrink, $basis, $width) {
+    flex: #{$grow} #{$shrink} $basis;
+
+    @media screen and (max-width: $width) {
         flex: unset;
     }
 }
@@ -78,3 +85,17 @@
         stroke: $colorHeadingPrimary;
     }
 }
+
+@mixin imgCover {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+@mixin circle {
+    overflow: hidden;
+    border-radius: 50%;
+}
+
+

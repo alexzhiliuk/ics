@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Favicons -->
+     
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400..900&family=Rubik:ital,wght@0,300..900;1,300..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap&_v=20250905162451" rel="stylesheet">
+        
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.min.css?_v=20250905162451">
+
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css?_v=20250905162451"
+    />
+
+    <!-- JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js?_v=20250905162451"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js?_v=20250905162451"></script>
+
+    <title>Text</title>
+</head>
+    <body>
+
+        <header class="header">
+    <div class="header__container container">
+        <a href="index.html" class="header__logo">
+            <img src="img/logo_default.svg" alt="">
+        </a>
+        <nav class="header__nav">
+            <ul class="header__menu">
+                <li class="header-dropdown">
+                    <a href="expertise.html">Expertise</a>
+                    <ul class="header-dropdown__list">
+                        <li>
+                            <a href="">D365 Finance & SCM</a>
+                        </li>
+                        <li>
+                            <a href="">D365 Customer Engagement</a>
+                        </li>
+                        <li>
+                            <a href="">MS Power Platform</a>
+                        </li>
+                        <li>
+                            <a href="">MS Azure</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="services.html">Services</a>
+                </li>
+                <li>
+                    <a href="clients.html">Clients</a>
+                </li>
+                <li class="header-dropdown">
+                    <a href="solutions.html">Solutions</a>
+                    <ul class="header-dropdown__list">
+                        <li>
+                            <a href="">D365 Finance & SCM</a>
+                        </li>
+                        <li>
+                            <a href="">D365 Customer Engagement</a>
+                        </li>
+                        <li>
+                            <a href="">MS Power Platform</a>
+                        </li>
+                        <li>
+                            <a href="">MS Azure</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="blog.html">Blog</a>
+                </li>
+                <li>
+                    <a href="about.html">About</a>
+                </li>
+            </ul>
+        </nav>
+        <a href="" class="header__btn btn btn_mobile">Contact</a>
+        <div class="header__burger">
+            <img src="img/burger/Hamburger Menu.svg" alt="" class="_open">
+            <img src="img/burger/Close.svg" alt="" class="_close">
+        </div>
+    </div>
+</header>
+
+<div class="mobile-menu">
+    <nav class="mobile-menu__nav"></nav>
+</div>
+
+<script>
+    $(".header__burger").click(function() {
+        $(this).toggleClass("_active")
+        $("body, html").toggleClass("mobile-lock")
+        $(".mobile-menu").toggleClass("_active")
+    })
+
+    const menu = $(".header__menu").clone().removeClass("header__menu").addClass("mobile-menu__list");
+    const btn = $(".header__btn").clone().removeClass("header__btn").addClass("mobile-menu__btn")
+
+    menu.find(".header-dropdown a").attr("href", "javascript:void(0)")
+
+    $(".mobile-menu__nav").append(menu)
+    $(".mobile-menu").append(btn)
+
+</script>
+        <main>            
+            <section class="hero hero_fw">
+    <div class="breadcrumbs container text-2">
+        <a href="index.html">Home</a>
+        <a href="javascript:void(0)">Expertise</a>
+    </div>
+    <div class="hero__container container">
+        <div class="hero__left">
+            <h1 class="hero__title h1">Text page</h1>
+        </div>
+        <div class="hero__right _mask-2">
+            <div class="hero__figure"></div>
+        </div>
+    </div>
+</section>     
+            <section class="section">
+    <div class="section__container container">
+        <div class="section__body">
+            <div class="text text-1">
+                <h1>Heading 1</h1>
+                <h2>Heading 2</h2>
+                <h3>Heading 3</h3>
+                <h4>Heading 4</h4>
+                <h5>Heading 5</h5>
+                <p>
+                    As businesses increasingly rely on a variety of third-party <a href="">applications</a> and services, the integration capabilities of ERP systems have become a key focus. The future of ERP will likely see an even greater emphasis on <strong>interoperability</strong> — the ability of ERP systems to seamlessly integrate with other software tools, platforms, and business solutions.
+                </p>
+                <p class="text-2">
+                    Artificial Intelligence (AI) and Machine Learning (ML) are making their mark on ERP systems in powerful ways. In the past, ERP systems were primarily rule-based and designed to streamline routine business processes.
+                </p>
+                <p class="text-2">
+                    However, with the integration of AI and ML, ERP systems are now evolving to deliver predictive analytics, intelligent automation, and enhanced decision support systems.
+                </p>
+                <ul>
+                    <li>
+                        Artificial Intelligence (AI) and Machine Learning (ML) are making their mark on ERP systems in powerful ways. In the past, ERP systems were primarily rule-based and designed to streamline routine business processes.
+                    </li>
+                    <li>
+                        However, with the integration of AI and ML, ERP systems are now evolving to deliver predictive analytics, intelligent automation, and enhanced decision support systems.
+                    </li>
+                </ul>
+                <ol>
+                    <li>
+                        Artificial Intelligence (AI) and Machine Learning (ML) are making their mark on ERP systems in powerful ways. In the past, ERP systems were primarily rule-based and designed to streamline routine business processes.
+                    </li>
+                    <li>
+                        However, with the integration of AI and ML, ERP systems are now evolving to deliver predictive analytics, intelligent automation, and enhanced decision support systems.
+                    </li>
+                </ol>
+                <blockquote>
+                    <p>Artificial Intelligence (AI) and Machine Learning (ML) are making their mark on ERP systems in powerful ways. </p>
+                </blockquote>
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Value</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Artificial Intelligence (AI)</td>
+                                <td>1 200</td>
+                            </tr>
+                            <tr>
+                                <td>Machine Learning (ML)</td>
+                                <td>1 500</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="image-left">
+                    <img src="img/blog/image.png" alt="">
+                    <div>
+                        <h3>Integration of AI</h3>
+                        <p>One of the elements of effective warehouse management is vehicle and warehouse utilization optimization. We built [ICS] Warehouse Package to facilitate this, combining intelligent mathematical algorithms with a user-friendly interface for ease of use and optimal results. This suite of warehouse management tools, which expand upon the standard functionality of Microsoft Dynamics AX 2012 R3 and D365FO, allows companies to apply the most efficient ways to load vehicles, handle inventory and plan warehouse operations. This, in turn, can help reduce shipping costs, ensure timeliness of deliveries, increase efficiency of warehouse space utilization and improve customer service.</p>
+                    </div>
+                </div>
+                <div class="image-right">
+                    <img src="img/blog/image.png" alt="">
+                    <div>
+                        <h3>Integration of AI</h3>
+                        <p>One of the elements of effective warehouse management is vehicle and warehouse utilization optimization. We built [ICS] Warehouse Package to facilitate this, combining intelligent mathematical algorithms with a user-friendly interface for ease of use and optimal results. This suite of warehouse management tools, which expand upon the standard functionality of Microsoft Dynamics AX 2012 R3 and D365FO, allows companies to apply the most efficient ways to load vehicles, handle inventory and plan warehouse operations. This, in turn, can help reduce shipping costs, ensure timeliness of deliveries, increase efficiency of warehouse space utilization and improve customer service.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>     
+            <div class="cta">
+    <div class="cta__container container">
+        <div>
+            <h2 class="cta__title h3">Drop us a line</h2>
+            <p class="cta__text text-1">Our services are designed to resolve your ERP issues in the most effective and direct way possible.</p>
+        </div>
+        <a href="" class="btn text-no-wrap">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <path
+                    d="M2 12C2 8.22876 2 6.34315 3.17157 5.17157C4.34315 4 6.22876 4 10 4H14C17.7712 4 19.6569 4 20.8284 5.17157C22 6.34315 22 8.22876 22 12C22 15.7712 22 17.6569 20.8284 18.8284C19.6569 20 17.7712 20 14 20H10C6.22876 20 4.34315 20 3.17157 18.8284C2 17.6569 2 15.7712 2 12Z"
+                    stroke="white" stroke-width="1.5" />
+                <path
+                    d="M6 8L8.1589 9.79908C9.99553 11.3296 10.9139 12.0949 12 12.0949C13.0861 12.0949 14.0045 11.3296 15.8411 9.79908L18 8"
+                    stroke="white" stroke-width="1.5" stroke-linecap="round" />
+            </svg>
+            Contact us
+        </a>
+    </div>
+</div>
+        </main>
+        <footer class="footer">
+    <div class="footer__container container">
+        <div class="footer__top">
+            <div class="footer__col">
+                <a href="index.html" class="footer__logo">
+                    <img src="img/logo_white.svg" alt="">
+                </a>
+                <div class="footer__partners">
+                    <img src="img/footer/partners.png" alt="">
+                </div>
+            </div>
+            <div class="footer__col">
+                <h3 class="footer__label">Head Office</h3>
+                <p class="footer__text text-2">
+                    101 Ostrobramska St. <br>
+                    04-041 Warsaw <br>
+                    Poland
+                </p>
+            </div>
+            <div class="footer__col">
+                <h3 class="footer__label">Quick Links</h3>
+                <ul class="footer__list text-2">
+                    <li>
+                        <a href="">Expertise</a>
+                    </li>
+                    <li>
+                        <a href="">Services</a>
+                    </li>
+                    <li>
+                        <a href="">Solutions</a>
+                    </li>
+                    <li>
+                        <a href="">Blog</a>
+                    </li>
+                    <li>
+                        <a href="">About</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="footer__col">
+                <h3 class="footer__label">Legal</h3>
+                <ul class="footer__list text-2">
+                    <li>
+                        <a href="">Privacy Policy</a>
+                    </li>
+                    <li>
+                        <a href="">Cookie Policy</a>
+                    </li>
+                    <li>
+                        <a href="">Terms & Conditions</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="footer__col footer__col_fit-content">
+                <div class="footer__socials">
+                    <a href="" class="footer__social">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M13.9847 6.82422C16.4477 6.82422 18.2951 8.43193 18.2953 11.8857L18.2943 18.334H14.5521V12.3174C14.5521 10.8065 14.0102 9.77563 12.6556 9.77539C11.6217 9.77539 11.0053 10.4703 10.7347 11.1416C10.6358 11.3822 10.6117 11.7177 10.6117 12.0537V18.334H6.86755C6.86786 18.2709 6.91673 8.14093 6.86755 7.08887H10.6117V8.68164C11.1085 7.91601 11.9979 6.82439 13.9847 6.82422ZM4.79626 18.333H1.0531V7.08789H4.79626V18.333ZM2.95056 1.66699C4.23101 1.66699 5.02 2.50678 5.04431 3.60938C5.04431 4.68915 4.23128 5.55273 2.92615 5.55273H2.90271C1.64609 5.55273 0.833374 4.68915 0.833374 3.60938C0.833394 2.5069 1.67034 1.66717 2.95056 1.66699Z"
+                                fill="white" />
+                        </svg>
+                    </a>
+                    <a href="" class="footer__social">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M10 2.5C10 2.5 16.2549 2.50052 17.8145 2.92969C18.6748 3.16595 19.3521 3.86168 19.582 4.74512C19.9972 6.33572 20 9.6428 20 9.6875C20 9.6875 20 13.0293 19.582 14.6309C19.352 15.5143 18.6748 16.2099 17.8145 16.4463C16.2549 16.8753 10 16.876 10 16.876C9.96448 16.876 3.74221 16.874 2.18652 16.4463C1.32596 16.21 0.647986 15.5144 0.417969 14.6309C0.000121428 13.0293 0 9.6875 0 9.6875C1.90111e-05 9.64281 0.00294963 6.33572 0.417969 4.74512C0.647972 3.8615 1.32594 3.16584 2.18652 2.92969C3.74223 2.50182 9.96448 2.5 10 2.5ZM8.125 13.126L13.125 10.001L8.125 6.87598V13.126Z"
+                                fill="white" />
+                        </svg>
+
+
+                    </a>
+                    <a href="" class="footer__social">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M0.0481035 0.833008L7.76982 10.9448L0 19.1663H1.74918L8.55233 11.9686L14.0486 19.1663H20L11.8442 8.48578L19.0767 0.833008H17.3275L11.0629 7.46196L6.00071 0.833008H0.0492635H0.0481035ZM2.61966 2.09468H5.35312L17.4261 17.9047H14.6926L2.61966 2.09468Z"
+                                fill="white" />
+                        </svg>
+
+
+                    </a>
+                    <a href="" class="footer__social">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M7.08107 7.90455C7.08107 6.95182 8.22928 7.04727 8.22928 7.04727H20V14.2855C20 19.2382 15.1194 20 15.1194 20H7.08107V14.2855H13.7794C14.449 14.2855 14.449 13.6191 14.449 13.6191V12.2855H7.08107V7.90455Z"
+                                fill="white" />
+                            <path
+                                d="M5.3583 0H19.905L19.9041 5.52364H6.69833C6.69833 5.52364 5.55013 5.71455 5.55013 6.85727V20H0V5.52364C0 5.52364 0.0959123 1.23818 5.3583 0Z"
+                                fill="white" />
+                        </svg>
+
+
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="footer__bottom">
+            <p class="footer__copy">
+                Copyright © 2025 <br>
+                Industry Consulting Service Sp. z o.o.
+            </p>
+            <p class="footer__creater">
+                Made in <a href="https://clickmedia.ru">Clickmedia</a>
+            </p>
+        </div>
+    </div>
+</footer>
+
+        <script src="js/app.min.js?_v=20250905162451"></script>
+    </body>
+</html>

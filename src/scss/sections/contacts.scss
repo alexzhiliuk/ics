@@ -1,0 +1,68 @@
+.office {
+    display: flex;
+    gap: $s30;
+
+    @media screen and (max-width: $breakpoint768) {
+        flex-direction: column;
+    }
+
+    // .office__content
+    &__content {
+        @include flexUntil(0, 1, 638px, $breakpoint768);
+        display: flex;
+        flex-direction: column;
+        gap: $s30;
+    }
+
+    // .office__img
+    &__img {
+        height: clamp(300px, 40vw, 400px);
+        border-radius: 10px;
+        overflow: hidden;
+
+        img {
+            @include imgCover;
+        }
+    }
+
+    // .office__info
+    &__info {
+    }
+
+    // .office__title
+    &__title {
+        color: $colorHeadingPrimary;
+        font-family: $fontHeading;
+        font-size: clamp(24px, 3vw, 32px);
+        font-style: normal;
+        font-weight: 500;
+        line-height: 120%; /* 38.4px */
+        letter-spacing: -0.64px;
+
+        margin-bottom: clamp(10px, 2vw, 20px);
+    }
+
+    // .office__items
+    &__items {
+        @include flexColumns(2, $s30);
+
+        @media screen and (max-width: $breakpoint576) {
+            @include flexColumns(1, 15px);
+        }
+    }
+
+    // .office__map
+    &__map {
+        @include flexUntil(0, 1, 392px, $breakpoint768);
+        border-radius: 10px;
+        overflow: hidden;
+
+        @media screen and (max-width: $breakpoint768) {
+            height: 50vw;
+        }
+
+        iframe {
+            @include imgCover;
+        }
+    }
+}

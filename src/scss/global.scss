@@ -98,3 +98,30 @@ button {
     text-wrap: nowrap;
     white-space: nowrap;
 }
+
+.flex-4-columns {
+    @include flexColumns(4, $s30);
+
+    @media screen and (max-width: $breakpoint992) {
+        @include flexColumns(3, $s30);
+    }
+    @media screen and (max-width: $breakpoint768) {
+        @include flexColumns(2, $s30);
+    }
+    @media screen and (max-width: $breakpoint576) {
+        @include flexColumns(1, 15px);
+    }
+}
+
+hr {
+    height: 1px;
+    width: 100%;
+    background: $colorBorderMuted;
+    border: none;
+    outline: none;
+    margin-bottom: $sectionPadding;
+}
+
+.color-heading-primary {
+    color: $colorHeadingPrimary;
+}

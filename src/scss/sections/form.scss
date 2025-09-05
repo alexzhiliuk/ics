@@ -1,0 +1,67 @@
+.form {
+    padding: clamp(20px, 5vw, 50px);
+    border-radius: 20px;
+    background: $colorBgAlt;
+
+    display: flex;
+    flex-direction: column;
+    gap: $s30;
+
+    // .form__title
+    &__title {
+        color: $colorHeadingPrimary;
+    }
+
+    // .form__fields
+    &__fields {
+        display: flex;
+        flex-wrap: wrap;
+        @include flexColumns(4, $s30);
+        @media screen and (max-width: $breakpoint1200) {
+            @include flexColumns(2, $s30);
+        }
+        @media screen and (max-width: $breakpoint576) {
+            @include flexColumns(1, 15px);
+        }
+
+        input,
+        textarea {
+            border-radius: 6px;
+            padding: 20px;
+            padding-right: 15px;
+            background: $colorWhite;
+
+            &::placeholder {
+                color: $colorTextPrimary;
+                text-transform: capitalize;
+            }
+            color: $colorHeadingPrimary;
+            
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 100%; /* 16px */
+        }
+
+        input {
+            height: 56px;
+        }
+
+        textarea {
+            resize: none;
+            flex-grow: 1;
+            height: 150px;
+        }
+    }
+
+    // .form__captcha
+
+    &__captcha {
+    }
+
+    &__submit {
+        @media screen and (min-width: $breakpoint576) {
+            align-self: flex-start;
+        }
+    }
+}

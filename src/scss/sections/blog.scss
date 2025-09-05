@@ -1,21 +1,31 @@
+.blog {
+    @include flexColumns(3, $s30);
+
+    @media screen and (max-width: $breakpoint992) {
+        @include flexColumns(2, $s30);
+    }
+    @media screen and (max-width: $breakpoint576) {
+        @include flexColumns(1, 15px);
+    }
+}
+
 .small-blog {
     max-width: 960px;
     width: 100%;
 
     @include flexColumns(2, $s30);
-    
+
     @media screen and (max-width: $breakpoint768) {
         @include flexColumns(1, 15px);
     }
 }
 
 .blog-card {
-
     padding: $s30;
     background: $colorWhite;
     border: 1px solid $colorBorderMuted;
     border-radius: 10px;
-    
+
     display: flex;
     flex-direction: column;
 
@@ -54,5 +64,50 @@
 
     // .blog-card__text
     &__text {
+    }
+}
+
+.card-popular-post {
+    display: flex;
+    align-items: flex-start;
+    gap: clamp(10px, 2vw, 20px);
+    padding: clamp(10px, 2vw, 20px) 0;
+
+    &:hover {
+        .card-popular-post__title {
+            color: $colorAccentPrimary;
+        }
+    }
+
+    // .card-popular-post__cover
+    &__cover {
+        width: 64px;
+        aspect-ratio: 1;
+        flex-shrink: 0;
+        border-radius: 5px;
+        overflow: hidden;
+
+        img {
+            @include imgCover;
+        }
+    }
+
+    // .card-popular-post__info
+    &__info {
+    }
+
+    // .card-popular-post__date
+    &__date {
+        margin-bottom: 10px;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 300;
+        line-height: 140%; /* 22.4px */
+        @include textOverflow(1);
+    }
+
+    // .card-popular-post__title
+    &__title {
+        color: $colorHeadingPrimary;
     }
 }

@@ -1,21 +1,43 @@
-.services {
+.services-cards {
     @include flexColumns(2, $s30);
 
     @media screen and (max-width: $breakpoint576) {
         @include flexColumns(1, 15px);
     }
+
+    &_3-col {
+        @include flexColumns(3, $s30);
+        @media screen and (max-width: $breakpoint992) {
+            @include flexColumns(2, 15px);
+        }
+        @media screen and (max-width: $breakpoint576) {
+            @include flexColumns(1, 15px);
+        }
+    }
 }
 
 .card-service {
-    
     flex-grow: 1;
 
     border-radius: 10px;
-    background: #FFF;
+    background: #fff;
     padding: clamp(20px, 3vw, 30px);
 
     display: flex;
     flex-direction: column;
+
+    &_border {
+        border: 1px solid $colorBorderMuted;
+    }
+
+    &_row {
+        flex-direction: row;
+        align-items: flex-start;
+        .card-service__icon {
+            margin-bottom: 0;
+            margin-right: $s30;
+        }
+    }
 
     // .card-service__icon
     &__icon {
@@ -34,5 +56,108 @@
     // .card-service__text
     &__text {
         color: $colorTextPrimary;
+    }
+}
+
+.service-categories {
+    width: 100%;
+    color: $colorHeadingPrimary;
+
+    li {
+        padding: 20px 0;
+        border-bottom: 1px solid $colorBorderMuted;
+
+        a {
+            &._active,
+            &:hover {
+                color: $colorSecondary;
+            }
+        }
+    }
+}
+
+.services {
+    display: flex;
+    flex-direction: column;
+    gap: $s30;
+}
+
+.service {
+    padding: clamp(20px, 5vw, 50px);
+    border-radius: 10px;
+    border: 1px solid $colorBorderMuted;
+    
+    // .service__header
+    &__header {
+        padding-bottom: clamp(20px, 4vw, 40px);
+        margin-bottom: clamp(20px, 4vw, 40px);
+        border-bottom: 1px solid $colorBorderMuted;
+
+        display: flex;
+        align-items: center;
+        gap: clamp(20px, 4vw, 40px);
+    }
+
+    // .service__cover
+    &__cover {
+        width: clamp(80px, 12vw, 120px);
+        aspect-ratio: 1;
+        flex-shrink: 0;
+        
+        border-radius: 6px;
+        overflow: hidden;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+    }
+
+    // .service__info
+    &__info {
+
+    }
+
+    // .service__title
+    &__title {
+        font-family: $fontHeading;
+        font-size: clamp(24px, 3vw, 32px);
+        font-weight: 500;
+        line-height: 120%; /* 38.4px */
+        letter-spacing: -0.64px;
+        color: $colorHeadingPrimary;
+
+        margin-bottom: 10px;
+    }
+
+    // .service__tags
+    &__tags {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: clamp(10px, 2vw, 20px);
+        row-gap: 10px;
+    }
+
+    // .service__tag
+    &__tag {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        svg {
+            flex-shrink: 0;
+            color: $colorSecondary;
+            width: 18px;
+            height: 18px;
+        }
+    }
+
+    &__body {
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
     }
 }

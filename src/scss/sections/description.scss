@@ -1,0 +1,42 @@
+.description {
+
+    display: flex;
+    align-items: center;
+    gap: clamp(30px, 6vw, 60px);
+
+    @media screen and (max-width: $breakpoint992) {
+        flex-direction: column;
+    }
+
+    // .desctiption__img
+    &__img {
+        border-radius: 10px;
+        overflow: hidden;
+        flex: 0 1 710px;
+        aspect-ratio: 710 / 470;
+
+        @media screen and (max-width: $breakpoint992) {
+            flex: unset;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+    }
+
+    // .desctiption__text
+    &__text {
+        flex: 0 1 650px;
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
+
+        @media screen and (max-width: $breakpoint992) {
+            flex: unset;
+        }
+    }
+}
+

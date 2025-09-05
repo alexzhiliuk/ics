@@ -1,0 +1,99 @@
+.clients {
+
+    background: $colorBgAlt;
+    border-radius: 20px;
+    padding: clamp(20px, 5vw, 50px);
+    
+    display: flex;
+    align-items: flex-start;
+    gap: clamp(40px, 6vw, 80px);
+    
+    @media screen and (max-width: $breakpoint992) {
+        flex-direction: column-reverse;
+        gap: clamp(20px, 4vw, 40px);
+    }
+
+    // .clients__logos
+    &__logos {
+        flex-grow: 1;
+        @include flexColumns(4, $s30);
+
+        @media screen and (max-width: $breakpoint1200) {
+            @include flexColumns(3, $s30);
+        }
+        @media screen and (max-width: $breakpoint576) {
+            @include flexColumns(2, 15px);
+        }
+    }
+
+    // .clients__logo
+    &__logo {
+        cursor: pointer;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        padding: clamp(10px, 2vw, 20px);
+        border-radius: 10px;
+        background: $colorWhite;
+
+        &:hover {
+            box-shadow: $hoverShadow;
+        }
+        
+        &._active {
+            box-shadow: $hoverShadowOnPrimary;
+        }
+
+        height: 100px;
+        img {
+            max-height: 60px;
+            height: 100%;
+            width: auto;
+            max-width: 100%;
+            object-fit: contain;
+        }
+    }
+
+    // .clients__preview
+    &__preview {
+        flex: 0 0 380px;
+
+        padding: clamp(20px, 4vw, 40px);
+        border-radius: 20px;
+        background-color: $colorWhite;
+
+        @media screen and (max-width: $breakpoint992) {
+            flex: unset;
+        }
+    }
+
+    // .clients__img
+    &__img {
+        border: 1px solid $colorBorderMuted;
+        border-radius: 10px;
+        background: $colorWhite;
+        padding: 20px;
+        margin-bottom: $s30;
+        height: 140px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        img {
+            max-width: 200px;
+            max-height: 80px;
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+    }
+
+    // .clients__text
+
+    &__text {
+    }
+}
+

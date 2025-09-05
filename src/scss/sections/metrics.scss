@@ -1,0 +1,64 @@
+.metrics {
+    @include flexColumns(3, $s30);
+
+    &_2-col {
+        @include flexColumns(2, $s30);
+    }
+    
+    @media screen and (max-width: $breakpoint576) {
+        @include flexColumns(1, 15px);
+    }
+
+}
+
+.metric-card {
+    padding: $s30;
+    background: $colorWhite;
+    border-radius: 10px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 20px;
+
+    min-height: 210px;
+
+    @media screen and (max-width: $breakpoint992) {
+        min-height: 160px;
+    }
+    @media screen and (max-width: $breakpoint576) {
+        min-height: unset;
+    }
+
+    &__header {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+    }
+
+    &__icon {
+        background: $colorAccentPrimary;
+        border-radius: 5px;
+        padding: 10px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        img {
+            width: clamp(24px, 3vw, 32px);
+            aspect-ratio: 1;
+            display: block;
+        }
+    }
+
+    // .metric-card__num
+    &__num {
+        color: $colorHeadingPrimary;
+    }
+
+    // .metric-card__text
+    &__text {
+        color: $colorTextPrimary;
+    }
+}
