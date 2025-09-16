@@ -2,7 +2,7 @@ import Swiper from 'swiper';
 import {Autoplay, Navigation, Pagination, EffectFade} from 'swiper/modules'
 const swiperModules = [Autoplay, Navigation, Pagination, EffectFade];
 
-const solutionsSwiper = new Swiper('#solutionsSwiper', {
+const solutionsSwiper = new Swiper('.solution__slider .swiper', {
     modules: swiperModules,
     effect: 'fade',
     loop: true,
@@ -17,4 +17,14 @@ const solutionsSwiper = new Swiper('#solutionsSwiper', {
     },
 
     
+})
+
+$(".solution__slider .swiper").each(function () { 
+    $(this).magnificPopup({
+        delegate: 'a',
+        gallery: {
+            enabled: true
+        },
+        type: 'image'
+    })
 })

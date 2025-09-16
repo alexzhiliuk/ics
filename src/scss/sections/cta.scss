@@ -1,6 +1,6 @@
 .cta {
 
-    padding: 0 5px;
+    padding: 0 $containerPadding;
     color: $colorPrimary;
     position: relative;
     z-index: 1;
@@ -8,6 +8,7 @@
 
     // .cta__container
     &__container {
+        max-width: $conteinerWidth;
         background: $colorBgBase;
         padding: clamp(15px, 5vw, 50px);
         border-radius: 10px;

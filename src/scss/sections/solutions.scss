@@ -140,4 +140,10 @@
             order: 3;
         }
     }
+
+    &__btn {
+        @media screen and (max-width: $breakpoint576) {
+            order: 4;
+        }
+    }
 }

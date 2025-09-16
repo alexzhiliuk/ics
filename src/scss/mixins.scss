@@ -10,6 +10,17 @@
     }
 }
 
+@mixin flexColumnsWithMaxWidth($count, $gap) {
+    display: flex;
+    flex-wrap: wrap;
+    gap: $gap;
+
+    & > * {
+        flex: 0 0 calc(100% / $count - $gap * ($count - 1) / $count);
+        max-width: calc(100% / $count - $gap * ($count - 1) / $count);
+    }
+}
+
 @mixin clamp($property, $min, $max, $dynamic: null) {
     @if $dynamic == null {
         $dynamic: math.div($max, 10);

@@ -4,6 +4,7 @@
     margin: 0;
     box-sizing: border-box;
     font-family: $fontPrimary;
+    scroll-margin-top: calc(clamp(70px, 12.5vw, 125px) + 40px);
 }
 
 *,
@@ -79,8 +80,23 @@ button {
     }
 }
 
+.display-from-576 {
+    @media screen and (max-width: $breakpoint576) {
+        display: none !important;
+    }
+}
+.display-to-576 {
+    @media screen and (min-width: $breakpoint576) {
+        display: none !important;
+    }
+}
+
 .align-self-center {
     align-self: center;
+}
+
+.flex-grow {
+    flex-grow: 1;
 }
 
 .fwidth-to-576 {

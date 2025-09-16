@@ -19,6 +19,8 @@ $(document).ready(function() {
             // Находим триггеры и цели
             var $triggers = $container.find(`[${tabsConfig.triggerAttr}]`);
             var $targets = $container.find(`[${tabsConfig.targetAttr}]`);
+
+            hashToggle($triggers, $targets)
             
             // Обработчик клика
             $triggers.on('click', function(e) {
@@ -33,9 +35,32 @@ $(document).ready(function() {
                 
                 // Активируем текущий
                 $trigger.addClass(tabsConfig.activeClass);
-                $(`[${tabsConfig.targetAttr}][${tabsConfig.idAttr}="${tabId}"]`).removeClass(tabsConfig.hiddenClass).addClass(tabsConfig.showClass).show();
+                var $target = $(`[${tabsConfig.targetAttr}][${tabsConfig.idAttr}="${tabId}"]`);
+                $target.removeClass(tabsConfig.hiddenClass).addClass(tabsConfig.showClass).show();
+                hashSet($target);
             });
         });
+    }
+
+    function hashToggle(triggers, targets) { 
+        const hash = window.location.hash
+
+        if (!hash) { return }
+
+        let target = targets.filter(hash)
+        if (!target.length) { return }
+        targets.hide()
+        target.show()
+
+        let tabId = target.attr(tabsConfig.idAttr)
+
+        triggers.removeClass(tabsConfig.activeClass)
+        triggers.filter(`[${tabsConfig.idAttr}=${tabId}]`).addClass(tabsConfig.activeClass)
+    }
+
+    function hashSet(target) {
+        if (!target.attr("id")) { return }
+        window.location.hash = "#" + target.attr("id")
     }
     
     initCustomTabs();

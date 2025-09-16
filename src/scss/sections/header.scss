@@ -12,6 +12,11 @@ $headerHeight: clamp(70px, 12.5vw, 125px);
 
     &_scrolled {
         background: $colorWhite;
+        box-shadow: 0 5px 10px 5px rgba(212, 234, 248, 0.3);
+    }
+
+    &._active {
+        box-shadow: none;
     }
 
     // .header__container
@@ -53,7 +58,7 @@ $headerHeight: clamp(70px, 12.5vw, 125px);
         gap: clamp(10px, 1vw, 20px);
 
         & > li {
-            padding: 10px;
+            // padding: 10px;
             display: flex;
             align-items: center;
             gap: 4px;
@@ -63,12 +68,14 @@ $headerHeight: clamp(70px, 12.5vw, 125px);
                 color: $colorSecondary;
                 opacity: 0;
                 pointer-events: none;
+                translate: 10px;
             }
             &::after {
                 content: ']';
                 color: $colorSecondary;
                 opacity: 0;
                 pointer-events: none;
+                translate: -10px;
             }
 
             &:hover {
@@ -83,6 +90,7 @@ $headerHeight: clamp(70px, 12.5vw, 125px);
             }
 
             & > a {
+                padding: 10px;
                 display: flex;
                 align-items: center;
                 gap: 5px;
@@ -108,7 +116,6 @@ $headerHeight: clamp(70px, 12.5vw, 125px);
 
         border-radius: 5px;
         border: 1px solid $colorBorderMuted;
-        background: #FFF;
 
         display: flex;
         align-items: center;
@@ -167,6 +174,12 @@ $headerHeight: clamp(70px, 12.5vw, 125px);
         }
     }
 
+    &__arrow {
+        @media screen and (min-width: $burgerBreakpoint) {
+            display: none;
+        }
+    }
+
     // .header-dropdown__list
     &__list {
         width: max-content;
@@ -192,6 +205,18 @@ $headerHeight: clamp(70px, 12.5vw, 125px);
                 }
             }
         }
+    }
+}
+
+.backing {
+    position: fixed;
+    inset: 0;
+    background: $colorWhite;
+    z-index: calc($headerLayer - 1);
+    display: none;
+
+    &._active {
+        display: block;
     }
 }
 
@@ -247,6 +272,7 @@ $headerHeight: clamp(70px, 12.5vw, 125px);
         flex-direction: column;
         gap: 10px;
 
+
         & > li {
             color: $colorTextBlue;
             font-size: 18px;
@@ -255,6 +281,7 @@ $headerHeight: clamp(70px, 12.5vw, 125px);
             line-height: 140%; /* 25.2px */
 
             & > a {
+                flex-grow: 1;
                 padding: 5px 0;
                 padding-right: 7px;
                 display: flex;
@@ -264,20 +291,26 @@ $headerHeight: clamp(70px, 12.5vw, 125px);
         }
 
         .header-dropdown {
-            &:hover {
+            display: flex;
+            flex-wrap: wrap;
 
-                // & > a {
-                //     &::after {
-                //         @include backgroundCenterContain("../img/dropdown/caret_alt.svg");
-                //         rotate: 180deg;
-                //     }
-                // }
+            a::after {
+                display: none;
+            }
 
-                .header-dropdown__list {
-                    display: flex;
+            &__arrow {
+                margin-left: auto;
+
+                &:hover {
+                    rotate: 180deg;
+                    & + .header-dropdown__list {
+                        display: flex;
+                    }
                 }
             }
+
             &__list {
+                flex: 0 0 100%;
                 margin-top: 5px;
                 width: 100%;
                 opacity: 1;

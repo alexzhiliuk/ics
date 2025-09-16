@@ -39,6 +39,10 @@
         }
     }
 
+    &:hover {
+        box-shadow: $hoverShadow;
+    }
+
     // .card-service__icon
     &__icon {
         width: clamp(30px, 4vw, 50px);

@@ -193,31 +193,31 @@
 
         @include hideScrollbar;
 
+        & > table {
+            border-collapse: collapse;
+            min-width: 100%;
+            width: max-content;
+
+            @extend .text-2;
+
+            th, td {
+                padding: 15px 20px;
+                border: 1px solid $colorBorderMuted;
+            }
+
+            th {
+                font-weight: 500;
+                text-align: left;
+            }
+
+            td {
+                
+            }
+        }
+
         @media screen and (max-width: $breakpoint768) {
             @include width100vw;
             padding: 0 $containerPadding;
-        }
-    }
-
-    & > table {
-        border-collapse: collapse;
-        min-width: 100%;
-        width: max-content;
-
-        @extend .text-2;
-
-        th, td {
-            padding: 15px 20px;
-            border: 1px solid $colorBorderMuted;
-        }
-
-        th {
-            font-weight: 500;
-            text-align: left;
-        }
-
-        td {
-            
         }
     }
 

@@ -1,16 +1,16 @@
 <section class="section">
-    <div class="section__container section__container_row container">
+    <div class="section__container section__container_row container" data-tabs-container>
         <div class="section__aside section__aside_sticky section__aside_shrink">
             <div class="aside-nav">
                 <h4 class="aside-nav__title h3">Location</h4>
                 <ul class="aside-nav__body">
                     <li>
-                        <a href="article.html" class="aside-nav__link _active text-1">
+                        <a href="javascript:void(0)" class="aside-nav__link _active text-1" data-tab-trigger data-tab-id="1">
                             Warsaw
                         </a>
                     </li>
                     <li>
-                        <a href="article.html" class="aside-nav__link text-1">
+                        <a href="javascript:void(0)" class="aside-nav__link text-1" data-tab-trigger data-tab-id="2">
                             Vilnius
                         </a>
                     </li>
@@ -18,13 +18,35 @@
             </div>
         </div>
         <div class="section__body section__body_wide">
-            <div class="office">
+            <div class="office" data-tab-target data-tab-id="1" id="warsaw">
                 <div class="office__content">
                     <div class="office__img">
                         <img src="@img/contacts/Image.png" alt="">
                     </div>
                     <div class="office__info">
                         <h2 class="office__title">avodaq AG</h2>
+                        <div class="office__items text-1">
+                            <p>
+                                101 Ostrobramska St. <br>04-041 Warsaw <br>Poland
+                            </p>
+                            <p class="color-heading-primary">
+                                <a href="">+375 29 712 5910</a> <br>
+                                <a href="">info@ic-service.net</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="office__map">
+                    <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3Acbd44b30e504ed2c264a6c61f1e5732f55a9c5e67374131c35740f2e7be7838d&amp;source=constructor" width="500" height="400" frameborder="0"></iframe>
+                </div>
+            </div>
+            <div class="office" data-tab-target data-tab-id="2" style="display: none;" id="vilnius">
+                <div class="office__content">
+                    <div class="office__img">
+                        <img src="@img/contacts/Image.png" alt="">
+                    </div>
+                    <div class="office__info">
+                        <h2 class="office__title">Vilnus AG</h2>
                         <div class="office__items text-1">
                             <p>
                                 101 Ostrobramska St. <br>04-041 Warsaw <br>Poland

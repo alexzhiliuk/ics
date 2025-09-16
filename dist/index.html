@@ -11,20 +11,23 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400..900&family=Rubik:ital,wght@0,300..900;1,300..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap&_v=20250905203847" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400..900&family=Rubik:ital,wght@0,300..900;1,300..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap&_v=20250916213941" rel="stylesheet">
         
 
     <!-- CSS -->
-    <link rel="stylesheet" href="css/style.min.css?_v=20250905203847">
+    <link rel="stylesheet" href="css/style.min.css?_v=20250916213941">
 
     <link
       rel="stylesheet"
-      href="https://unpkg.com/swiper/swiper-bundle.min.css?_v=20250905203847"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css?_v=20250916213941"
     />
 
     <!-- JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js?_v=20250905203847"></script>
-    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js?_v=20250905203847"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js?_v=20250916213941"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js?_v=20250916213941"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.2.0/jquery.magnific-popup.min.js?_v=20250916213941" integrity="sha512-fCRpXk4VumjVNtE0j+OyOqzPxF1eZwacU3kN3SsznRPWHgMTSSo7INc8aY03KQDBWztuMo5KjKzCFXI/a5rVYQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.2.0/magnific-popup.min.css?_v=20250916213941" integrity="sha512-lvaVbvmbHhG8cmfivxLRhemYlTT60Ly9Cc35USrpi8/m+Lf/f/T8x9kEIQq47cRj1VQIFuxTxxCcvqiQeQSHjQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <title>Главная</title>
 </head>
@@ -39,6 +42,7 @@
             <ul class="header__menu">
                 <li class="header-dropdown">
                     <a href="expertise.html">Expertise</a>
+                    <img class="header-dropdown__arrow" src="img/dropdown/caret_alt.svg" alt="">
                     <ul class="header-dropdown__list">
                         <li>
                             <a href="">D365 Finance & SCM</a>
@@ -62,6 +66,7 @@
                 </li>
                 <li class="header-dropdown">
                     <a href="solutions.html">Solutions</a>
+                    <img class="header-dropdown__arrow" src="img/dropdown/caret_alt.svg" alt="">
                     <ul class="header-dropdown__list">
                         <li>
                             <a href="">D365 Finance & SCM</a>
@@ -92,6 +97,7 @@
         </div>
     </div>
 </header>
+<div class="backing"></div>
 
 <div class="mobile-menu">
     <nav class="mobile-menu__nav"></nav>
@@ -102,12 +108,14 @@
         $(this).toggleClass("_active")
         $("body, html").toggleClass("mobile-lock")
         $(".mobile-menu").toggleClass("_active")
+        $(".backing").toggleClass("_active")
+        $(".header").toggleClass("_active")
     })
 
     const menu = $(".header__menu").clone().removeClass("header__menu").addClass("mobile-menu__list");
     const btn = $(".header__btn").clone().removeClass("header__btn").addClass("mobile-menu__btn")
 
-    menu.find(".header-dropdown a").attr("href", "javascript:void(0)")
+    // menu.find(".header-dropdown a").attr("href", "javascript:void(0)")
 
     $(".mobile-menu__nav").append(menu)
     $(".mobile-menu").append(btn)
@@ -180,46 +188,46 @@
         </div>
         <div class="section__body">
             <div class="expertise">
-                <div class="expertise-card">
+                <a href="" class="expertise-card">
                     <img src="img/expertise/Type=Dynamics.png" alt="" class="expertise-card__img">
                     <div class="expertise-card__title">Dinamycs 365</div>
-                </div>
-                <div class="expertise-card">
+                </a>
+                <a href="" class="expertise-card">
                     <img src="img/expertise/Type=Supply.png" alt="" class="expertise-card__img">
                     <div class="expertise-card__title">Supply Chain Management</div>
-                </div>
-                <div class="expertise-card">
+                </a>
+                <a href="" class="expertise-card">
                     <img src="img/expertise/Type=Commerce.png" alt="" class="expertise-card__img">
                     <div class="expertise-card__title">Commerce</div>
-                </div>
-                <div class="expertise-card">
+                </a>
+                <a href="" class="expertise-card">
                     <img src="img/expertise/Type=Finance.png" alt="" class="expertise-card__img">
                     <div class="expertise-card__title">Finance and Operations</div>
-                </div>
-                <div class="expertise-card">
+                </a>
+                <a href="" class="expertise-card">
                     <img src="img/expertise/Type=Azure.png" alt="" class="expertise-card__img">
                     <div class="expertise-card__title">Microsoft Azure</div>
-                </div>
-                <div class="expertise-card">
+                </a>
+                <a href="" class="expertise-card">
                     <img src="img/expertise/Type=Automate.png" alt="" class="expertise-card__img">
                     <div class="expertise-card__title">Power Automate</div>
-                </div>
-                <div class="expertise-card">
+                </a>
+                <a href="" class="expertise-card">
                     <img src="img/expertise/Type=Pages.png" alt="" class="expertise-card__img">
                     <div class="expertise-card__title">Power Pages</div>
-                </div>
-                <div class="expertise-card">
+                </a>
+                <a href="" class="expertise-card">
                     <img src="img/expertise/Type=BI.png" alt="" class="expertise-card__img">
                     <div class="expertise-card__title">Power BI</div>
-                </div>
-                <div class="expertise-card">
+                </a>
+                <a href="" class="expertise-card">
                     <img src="img/expertise/Type=Apps.png" alt="" class="expertise-card__img">
                     <div class="expertise-card__title">Power Apps</div>
-                </div>
-                <div class="expertise-card">
+                </a>
+                <a href="" class="expertise-card">
                     <img src="img/expertise/Type=Agents.png" alt="" class="expertise-card__img">
                     <div class="expertise-card__title">Power Virtual Agents</div>
-                </div>
+                </a>
             </div>
         </div>
     </div>
@@ -236,41 +244,41 @@
         </div>
         <div class="section__body">
             <div class="services-cards">
-                <div class="card-service">
+                <a href="" class="card-service">
                     <img src="img/Card/Linear/Network, IT, Programming/Command.svg" alt="" class="card-service__icon">
                     <h3 class="h4 card-service__title">Implementation Partners</h3>
                     <p class="text-2 card-service__text">
                         Our services are designed to resolve your ERP issues in the most effective and direct way possible. No oversized discoveries, nor bloated engagements.
                     </p>
-                </div>
-                <div class="card-service">
+                </a>
+                <a href="" class="card-service">
                     <img src="img/Card/Linear/Essentional, UI/Database.svg" alt="" class="card-service__icon">
                     <h3 class="h4 card-service__title">Data analytics & BI</h3>
                     <p class="text-2 card-service__text">
                         Our services are designed to resolve your ERP issues in the most effective and direct way possible. No oversized discoveries, nor bloated engagements.
                     </p>
-                </div>
-                <div class="card-service">
+                </a>
+                <a href="" class="card-service">
                     <img src="img/Linear/Users/User Id.svg" alt="" class="card-service__icon">
                     <h3 class="h4 card-service__title">ERP Rescue Service</h3>
                     <p class="text-2 card-service__text">
                         Our services are designed to resolve your ERP issues in the most effective and direct way possible. No oversized discoveries, nor bloated engagements.
                     </p>
-                </div>
-                <div class="card-service">
+                </a>
+                <a href="" class="card-service">
                     <img src="img/Linear/Essentional, UI/Help.svg" alt="" class="card-service__icon">
                     <h3 class="h4 card-service__title">Managed Support Services</h3>
                     <p class="text-2 card-service__text">
                         Our services are designed to resolve your ERP issues in the most effective and direct way possible. No oversized discoveries, nor bloated engagements.
                     </p>
-                </div>
-                <div class="card-service">
+                </a>
+                <a href="" class="card-service">
                     <img src="img/Linear/School/Square Academic Cap.svg" alt="" class="card-service__icon">
                     <h3 class="h4 card-service__title">Advisory Services</h3>
                     <p class="text-2 card-service__text">
                         Our services are designed to resolve your ERP issues in the most effective and direct way possible. No oversized discoveries, nor bloated engagements.
                     </p>
-                </div>
+                </a>
             </div>
             <a href="" class="btn btn_tertiary display-to-992">All Services</a>
         </div>
@@ -331,8 +339,8 @@
                 <div class="reviews-nav display-to-992">
                     <button class="reviews-nav__prev btn btn_icon btn_secondary"><img src="img/Linear/Arrows/Arrow Left.svg" alt=""></button>
                     <button class="reviews-nav__next btn btn_icon btn_secondary"><img src="img/Linear/Arrows/Arrow Right.svg" alt=""></button>
+                    <a href="" class="btn display-to-992 flex-grow">View all</a>
                 </div>
-                <a href="" class="btn display-to-992">View all</a>
             </div>            
         </div>
     </div>
@@ -399,19 +407,20 @@
                     <p class="solution__desc text-2">PORINI 365 ERP for Microsoft Dynamics 365 is a vertical solution designed for the fashion, retail, footwear and textile sector, based on Microsoft Dynamics 365 for Operations, the cutting edge of innovation for the business of your company. The solution addresses the need of the fashion business while defining in a very efficient way seasonal products that decline in a high number of variations. It allows you to define code structures, code templates and attach to it technical and commercial data specific to the product category.</p>
                     <div class="solution__slider">
                         <button class="solution__prev btn btn_icon btn_secondary"><img src="img/Linear/Arrows/Arrow Left.svg" alt=""></button>
-                        <div class="swiper" id="solutionsSwiper">
+                        <div class="swiper" >
                             <div class="swiper-wrapper">
                                 <div class="swiper-slide">
-                                    <img src="img/solutions/Image.png" alt="" class="solution__slide-img">
+                                    <a href="img/solutions/Image.png"><img src="img/solutions/Image.png" alt="" class="solution__slide-img"></a>
                                 </div>
                                 <div class="swiper-slide">
-                                    <img src="img/solutions/Image.png" alt="" class="solution__slide-img">
+                                    <a href="img/solutions/Image.png"><img src="img/solutions/Image.png" alt="" class="solution__slide-img"></a>
                                 </div>
                             </div>
                         </div>
                         <button class="solution__next btn btn_icon btn_secondary"><img src="img/Linear/Arrows/Arrow Right.svg" alt=""></button>
+                        <a href="" class="btn solution__btn flex-grow display-to-576">Learn more</a>
                     </div>
-                    <a href="" class="btn solution__btn fwidth-to-576 align-self-center">Learn more</a>
+                    <a href="" class="btn solution__btn align-self-center display-from-576">Learn more</a>
                 </div>
             </div>
             <div class="solution" data-tab-target="" data-tab-id="2" style="display: none;">
@@ -428,19 +437,20 @@
                     <p class="solution__desc text-2">PORINI 563 ERP for Microsoft Dynamics 365 is a vertical solution designed for the fashion, retail, footwear and textile sector, based on Microsoft Dynamics 365 for Operations, the cutting edge of innovation for the business of your company. The solution addresses the need of the fashion business while defining in a very efficient way seasonal products that decline in a high number of variations. It allows you to define code structures, code templates and attach to it technical and commercial data specific to the product category.</p>
                     <div class="solution__slider">
                         <button class="solution__prev btn btn_icon btn_secondary"><img src="img/Linear/Arrows/Arrow Left.svg" alt=""></button>
-                        <div class="swiper" id="solutionsSwiper">
+                        <div class="swiper" >
                             <div class="swiper-wrapper">
                                 <div class="swiper-slide">
-                                    <img src="img/solutions/Image.png" alt="" class="solution__slide-img">
+                                    <a href="img/solutions/Image.png"><img src="img/solutions/Image.png" alt="" class="solution__slide-img"></a>
                                 </div>
                                 <div class="swiper-slide">
-                                    <img src="img/solutions/Image.png" alt="" class="solution__slide-img">
+                                    <a href="img/solutions/Image.png"><img src="img/solutions/Image.png" alt="" class="solution__slide-img"></a>
                                 </div>
                             </div>
                         </div>
                         <button class="solution__next btn btn_icon btn_secondary"><img src="img/Linear/Arrows/Arrow Right.svg" alt=""></button>
+                        <a href="" class="btn solution__btn flex-grow display-to-576">Learn more</a>
                     </div>
-                    <a href="" class="btn solution__btn fwidth-to-576 align-self-center">Learn more</a>
+                    <a href="" class="btn solution__btn align-self-center display-from-576">Learn more</a>
                 </div>
             </div>
             <a href="" class="btn btn_tertiary display-to-992">All Solutions</a>
@@ -603,45 +613,9 @@
         </div>
     </div>
 </footer>
-        <div class="cookies">
-    <div class="cookies__icon">
-        <img src="img/Linear/Security/Shield Network.svg" alt="">
-    </div>
-    <div class="cookies__info">
-        <h4 class="cookies__title h4">We value your privacy.</h4>
-        <p class="cookies__text text-2">
-            We use cookies to ensure that you get the best experience on the website. By further browsing you agree with our <a href="">Privacy Policy</a>.
-        </p>
-    </div>
-    <button class="cookies__btn btn btn_mobile">Accept All</button>
-</div>
-<script>
-    $(document).ready(function () { 
-        $(".cookies__btn").click(function () { 
-            $(this).parents(".cookies").fadeOut();
-        })
-    })
-</script>
-        <section class="popup" data-popup="1" >
-    <form class="popup__inner">
-        <div class="popup__close">
-            <img src="img/burger/Close.svg" alt="">
-        </div>
-        <h2 class="popup__title h3">Send us a message <br>with your Inquiry</h2>
-        <div class="popup__inputs">
-            <input class="popup__input" type="text" placeholder="Your Name" required>
-            <input class="popup__input" type="email" placeholder="Business Email" required>
-            <input class="popup__input" type="text" placeholder="Company" required>
-            <input class="popup__input" type="text" placeholder="Country" required>
-            <textarea name="" id="" class="popup__textarea" placeholder="Your message"></textarea>
-            <label class="popup__captcha">
-                
-            </label>
-        </div>
-        <button type="submit" class="btn popup__btn">Send</button>
-    </form>
-</section>
+        
+        
 
-        <script src="js/app.min.js?_v=20250905203847"></script>
+        <script src="js/app.min.js?_v=20250916213941"></script>
     </body>
 </html>

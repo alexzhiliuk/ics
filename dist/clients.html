@@ -11,20 +11,23 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400..900&family=Rubik:ital,wght@0,300..900;1,300..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap&_v=20250905203847" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400..900&family=Rubik:ital,wght@0,300..900;1,300..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap&_v=20250916213941" rel="stylesheet">
         
 
     <!-- CSS -->
-    <link rel="stylesheet" href="css/style.min.css?_v=20250905203847">
+    <link rel="stylesheet" href="css/style.min.css?_v=20250916213941">
 
     <link
       rel="stylesheet"
-      href="https://unpkg.com/swiper/swiper-bundle.min.css?_v=20250905203847"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css?_v=20250916213941"
     />
 
     <!-- JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js?_v=20250905203847"></script>
-    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js?_v=20250905203847"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js?_v=20250916213941"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js?_v=20250916213941"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.2.0/jquery.magnific-popup.min.js?_v=20250916213941" integrity="sha512-fCRpXk4VumjVNtE0j+OyOqzPxF1eZwacU3kN3SsznRPWHgMTSSo7INc8aY03KQDBWztuMo5KjKzCFXI/a5rVYQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.2.0/magnific-popup.min.css?_v=20250916213941" integrity="sha512-lvaVbvmbHhG8cmfivxLRhemYlTT60Ly9Cc35USrpi8/m+Lf/f/T8x9kEIQq47cRj1VQIFuxTxxCcvqiQeQSHjQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <title>Clients and Partners</title>
 </head>
@@ -39,6 +42,7 @@
             <ul class="header__menu">
                 <li class="header-dropdown">
                     <a href="expertise.html">Expertise</a>
+                    <img class="header-dropdown__arrow" src="img/dropdown/caret_alt.svg" alt="">
                     <ul class="header-dropdown__list">
                         <li>
                             <a href="">D365 Finance & SCM</a>
@@ -62,6 +66,7 @@
                 </li>
                 <li class="header-dropdown">
                     <a href="solutions.html">Solutions</a>
+                    <img class="header-dropdown__arrow" src="img/dropdown/caret_alt.svg" alt="">
                     <ul class="header-dropdown__list">
                         <li>
                             <a href="">D365 Finance & SCM</a>
@@ -92,6 +97,7 @@
         </div>
     </div>
 </header>
+<div class="backing"></div>
 
 <div class="mobile-menu">
     <nav class="mobile-menu__nav"></nav>
@@ -102,12 +108,14 @@
         $(this).toggleClass("_active")
         $("body, html").toggleClass("mobile-lock")
         $(".mobile-menu").toggleClass("_active")
+        $(".backing").toggleClass("_active")
+        $(".header").toggleClass("_active")
     })
 
     const menu = $(".header__menu").clone().removeClass("header__menu").addClass("mobile-menu__list");
     const btn = $(".header__btn").clone().removeClass("header__btn").addClass("mobile-menu__btn")
 
-    menu.find(".header-dropdown a").attr("href", "javascript:void(0)")
+    // menu.find(".header-dropdown a").attr("href", "javascript:void(0)")
 
     $(".mobile-menu__nav").append(menu)
     $(".mobile-menu").append(btn)
@@ -442,6 +450,6 @@
     </div>
 </footer>
 
-        <script src="js/app.min.js?_v=20250905203847"></script>
+        <script src="js/app.min.js?_v=20250916213941"></script>
     </body>
 </html>

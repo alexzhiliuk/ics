@@ -61,7 +61,7 @@
         flex: 0 0 380px;
 
         padding: clamp(20px, 4vw, 40px);
-        border-radius: 20px;
+        border-radius: clamp(10px, 2vw, 20px);
         background-color: $colorWhite;
 
         @media screen and (max-width: $breakpoint992) {

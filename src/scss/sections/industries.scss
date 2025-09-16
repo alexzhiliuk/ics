@@ -1,13 +1,13 @@
 .industries {
-    @include flexColumns(3, $s30);
+    @include flexColumnsWithMaxWidth(3, $s30);
     row-gap: 0;
 
     @media screen and (max-width: $breakpoint1200) {
-        @include flexColumns(2, $s30);
+        @include flexColumnsWithMaxWidth(2, $s30);
         row-gap: 0;
     }
     @media screen and (max-width: $breakpoint576) {
-        @include flexColumns(1, 15px);
+        @include flexColumnsWithMaxWidth(1, 15px);
         row-gap: 0;
     }
 }
@@ -57,7 +57,6 @@
     &__title {
         margin-bottom: 10px;
         color: $colorHeadingPrimary;
-        word-break: break-all;
     }
 
     // .industry-card__text

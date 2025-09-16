@@ -7,6 +7,7 @@
             <ul class="header__menu">
                 <li class="header-dropdown">
                     <a href="expertise.html">Expertise</a>
+                    <img class="header-dropdown__arrow" src="@img/dropdown/caret_alt.svg" alt="">
                     <ul class="header-dropdown__list">
                         <li>
                             <a href="">D365 Finance & SCM</a>
@@ -30,6 +31,7 @@
                 </li>
                 <li class="header-dropdown">
                     <a href="solutions.html">Solutions</a>
+                    <img class="header-dropdown__arrow" src="@img/dropdown/caret_alt.svg" alt="">
                     <ul class="header-dropdown__list">
                         <li>
                             <a href="">D365 Finance & SCM</a>
@@ -60,6 +62,7 @@
         </div>
     </div>
 </header>
+<div class="backing"></div>
 
 <div class="mobile-menu">
     <nav class="mobile-menu__nav"></nav>
@@ -70,12 +73,14 @@
         $(this).toggleClass("_active")
         $("body, html").toggleClass("mobile-lock")
         $(".mobile-menu").toggleClass("_active")
+        $(".backing").toggleClass("_active")
+        $(".header").toggleClass("_active")
     })
 
     const menu = $(".header__menu").clone().removeClass("header__menu").addClass("mobile-menu__list");
     const btn = $(".header__btn").clone().removeClass("header__btn").addClass("mobile-menu__btn")
 
-    menu.find(".header-dropdown a").attr("href", "javascript:void(0)")
+    // menu.find(".header-dropdown a").attr("href", "javascript:void(0)")
 
     $(".mobile-menu__nav").append(menu)
     $(".mobile-menu").append(btn)
