@@ -986,11 +986,11 @@ hr {
   color: #777777;
 }
 @media screen and (min-width: 1023.98px) {
-  .header-dropdown > a::after {
+  .header-dropdown:hover > a::after {
     background: url("../img/dropdown/caret_alt.svg") center/contain no-repeat;
     rotate: 180deg;
   }
-  .header-dropdown .header-dropdown__list {
+  .header-dropdown:hover .header-dropdown__list {
     pointer-events: all;
     opacity: 1;
   }
