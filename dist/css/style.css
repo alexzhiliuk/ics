@@ -985,13 +985,15 @@ hr {
   transition: all 120ms ease;
   color: #777777;
 }
-.header-dropdown:hover > a::after {
-  background: url("../img/dropdown/caret_alt.svg") center/contain no-repeat;
-  rotate: 180deg;
-}
-.header-dropdown:hover .header-dropdown__list {
-  pointer-events: all;
-  opacity: 1;
+@media screen and (min-width: 1023.98px) {
+  .header-dropdown > a::after {
+    background: url("../img/dropdown/caret_alt.svg") center/contain no-repeat;
+    rotate: 180deg;
+  }
+  .header-dropdown .header-dropdown__list {
+    pointer-events: all;
+    opacity: 1;
+  }
 }
 @media screen and (min-width: 1023.98px) {
   .header-dropdown__arrow {
@@ -1096,14 +1098,14 @@ hr {
 .mobile-menu__list .header-dropdown a::after {
   display: none;
 }
-.mobile-menu__list .header-dropdown__arrow {
-  margin-left: auto;
-}
-.mobile-menu__list .header-dropdown__arrow:hover {
+.mobile-menu__list .header-dropdown._active .header-dropdown__arrow {
   rotate: 180deg;
 }
-.mobile-menu__list .header-dropdown__arrow:hover + .header-dropdown__list {
+.mobile-menu__list .header-dropdown._active .header-dropdown__arrow + .header-dropdown__list {
   display: flex;
+}
+.mobile-menu__list .header-dropdown__arrow {
+  margin-left: auto;
 }
 .mobile-menu__list .header-dropdown__list {
   flex: 0 0 100%;

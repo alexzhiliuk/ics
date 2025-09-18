@@ -163,8 +163,7 @@ $headerHeight: clamp(70px, 12.5vw, 125px);
 
     }
 
-    &:hover {
-
+    @mixin activeDropdown {
         & > a {
             &::after {
                 @include backgroundCenterContain("../img/dropdown/caret_alt.svg");
@@ -177,6 +176,11 @@ $headerHeight: clamp(70px, 12.5vw, 125px);
             opacity: 1;
         }
     }
+
+    @media screen and (min-width: $burgerBreakpoint) {
+        @include activeDropdown();
+    }
+
 
     &__arrow {
         @media screen and (min-width: $burgerBreakpoint) {
@@ -302,15 +306,17 @@ $headerHeight: clamp(70px, 12.5vw, 125px);
                 display: none;
             }
 
-            &__arrow {
-                margin-left: auto;
-
-                &:hover {
+            &._active {
+                .header-dropdown__arrow {
                     rotate: 180deg;
                     & + .header-dropdown__list {
                         display: flex;
                     }
                 }
+            }
+
+            &__arrow {
+                margin-left: auto;
             }
 
             &__list {
