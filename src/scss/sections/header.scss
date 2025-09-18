@@ -178,7 +178,9 @@ $headerHeight: clamp(70px, 12.5vw, 125px);
     }
 
     @media screen and (min-width: $burgerBreakpoint) {
-        @include activeDropdown();
+        &:hover {
+            @include activeDropdown();
+        }
     }
 
 
