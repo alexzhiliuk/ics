@@ -13,6 +13,10 @@ $headerHeight: clamp(70px, 12.5vw, 125px);
     &_scrolled {
         background: $colorWhite;
         box-shadow: 0 5px 10px 5px rgba(212, 234, 248, 0.3);
+
+        @media screen and (min-width: $breakpoint992) {
+            height: calc($headerHeight * 0.7);
+        }
     }
 
     &._active {

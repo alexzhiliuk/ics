@@ -214,51 +214,39 @@ $animation: 60s infinite ease-in-out;
         &._mask-1 {
             .hero__img {
                 mask: url(../img/hero/mask/mask-1.svg) center / contain no-repeat;
-                width: 1050px;
-
-                @media screen and (max-width: $breakpoint768) {
-                    width: 150%;
-                }
             }
             .hero__figure {
                 background: url(../img/hero/figure/1.svg) center / contain no-repeat;
-                width: 1050px;
-
-
-                @media screen and (max-width: $breakpoint768) {
-                    width: 150%;
-                }
             }
         }
         &._mask-2 {
             .hero__img {
                 mask: url(../img/hero/mask/mask-2.svg) center / contain no-repeat;
-                width: 844px;
-
-                @media screen and (max-width: $breakpoint768) {
-                    width: 123%;
-                }
             }
             .hero__figure {
                 background: url(../img/hero/figure/2.svg) center / contain no-repeat;
-                width: 1050px;
-
-                @media screen and (max-width: $breakpoint768) {
-                    width: 150%;
-                }
             }
         }
     }
 
+    &__bouding {
+                        
+        height: 100%;
+        width: auto;
+        opacity: 0;
+        pointer-events: none;
+    
+    }
+
     // $imgWidth: max(150%, 800px);
     // $imgHeight: clamp(100%, 50vw, 150%);
-    $imgHeight: 638px;
+    $imgHeight: clamp(400px, 70vw, 638px);
 
     // .hero__img
     &__img {
 
         position: absolute;
-        width: 1050px;
+        width: auto;
         height: $imgHeight;
         top: 0;
         left: 0;
@@ -266,7 +254,6 @@ $animation: 60s infinite ease-in-out;
 
         @media screen and (max-width: $breakpoint768) {
             height: 150%;
-            width: 150%;
         }
 
         &::before {
@@ -277,7 +264,7 @@ $animation: 60s infinite ease-in-out;
             background: rgba($color: #243579, $alpha: .2);
         }
 
-        img {
+        & > img:first-child {
             width: 100%;
             height: 100%;
             object-fit: cover;
@@ -290,6 +277,7 @@ $animation: 60s infinite ease-in-out;
     &__figure {
         position: absolute;
         height: $imgHeight;
+        width: auto;
         top: 0;
         left: 0;
         z-index: 0;
@@ -298,11 +286,6 @@ $animation: 60s infinite ease-in-out;
             height: 150%;
         }
 
-        img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-        }
     }
 
     &__article-info {
