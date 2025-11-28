@@ -2704,6 +2704,9 @@ hr {
     flex-direction: column;
   }
 }
+.accordeon-horizontal._active .accordeon-horizontal__header {
+  display: none;
+}
 .accordeon-horizontal._active .accordeon-horizontal__body {
   grid-template-columns: 1fr;
   padding: clamp(20px, 4vw, 50px);
